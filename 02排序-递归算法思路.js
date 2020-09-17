@@ -9,7 +9,7 @@ let minOf3 = (numbers) => {
 };
 //下面求四个数里面最小的
 let minOf4 = (numbers) => {
-    return minOf3([a, minOf3([b, c, d])])
+    return minOf2([a, minOf3([b, c, d])])
 };
 //结论：求任意长度数组的最小值都可以通过minOf2实现
 
@@ -43,6 +43,16 @@ let sort2 = (numbers) => {
 let minIndex = (numbers) => {
     return numbers.indexOf(min(numbers))
 }; //这时一个取巧的办法
+// let minIndex = (numbers) =>
+//     let index = 0
+// for (let i = 1; i < numbers.length; i++) {
+//     if (numbers[i] < numbers[index]) {
+//         index = i
+//     }
+// }
+// return index
+// }
+
 //这时我们可以得到最小值的下标，下面来修改我们的代码
 let sort3 = (numbers) => {
     let index = minIndex(numbers)
